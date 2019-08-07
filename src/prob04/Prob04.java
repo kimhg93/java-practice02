@@ -1,20 +1,28 @@
 package prob04;
-public class Prob04 {
 
-	public static void main(String[] args) {
-		char[] c1 = reverse( "Hello World" );
-		printCharArray( c1 );
-		
-		char[] c2 = reverse( "Java Programming!" );
-		printCharArray( c2 );
+import java.util.Scanner;
+
+public class Prob04 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();		
+		char[] reverse = reverse(str);
+		printCharArray(reverse);
+		sc.close();
 	}
 	
-	public static char[] reverse(String str) {
-		/* 코드를 완성합니다 */
-		return null;
+	public static char[] reverse(String  str) {
+		char[] reverse = new char[str.length()];
+		for(int i=str.length(); i>0; i--) {
+			reverse[str.length()-i] = str.charAt(i-1);
+		}
+		return reverse;		
 	}
-
-	public static void printCharArray(char[] array){
-		/* 코드를 완성합니다 */
+	
+	public static void printCharArray(char[] array) {
+		for(int i=0; i<array.length;i++) {
+			System.out.print(array[i]);
+		}
+		
 	}
 }
